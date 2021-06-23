@@ -39,9 +39,5 @@ class Glami_Feed_Generator_Pixel_For_Woocommerce_i18n {
 			false,
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
 		);
-
 	}
-
-
-
 }

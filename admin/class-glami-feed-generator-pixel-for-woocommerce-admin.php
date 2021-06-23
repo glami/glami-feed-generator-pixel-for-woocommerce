@@ -20,8 +20,6 @@
  * @subpackage Glami_Feed_Generator_Pixel_For_Woocommerce/admin
  * @author     GLAMI <info@glami.cz>
  */
-use Automattic\WooCommerce\Admin\Features\Navigation\Menu;
-
 class Glami_Feed_Generator_Pixel_For_Woocommerce_Admin {
 
 	/**
@@ -104,15 +102,6 @@ class Glami_Feed_Generator_Pixel_For_Woocommerce_Admin {
 			'ajax_url' => admin_url('admin-ajax.php'),
 			'nonce' => wp_create_nonce('glami-ajax-nonce')
 		));
-	}
-
-	public function glami_feed_generator_pixel_for_woocommerce_options_page() {
-		?>
-		<div class="wrap">
-			<h1><?= esc_html(get_admin_page_title()); ?></h1>
-			<p>Ευχαριστούμε που επιλέγε την Web Expert.</p>
-		</div>
-		<?php
 	}
 
 	public function add_integration( $integrations ) {

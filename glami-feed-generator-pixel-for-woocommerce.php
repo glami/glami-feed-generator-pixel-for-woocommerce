@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The plugin bootstrap file
  *
@@ -86,10 +85,6 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-glami-feed-generator-pixel
  * @since    1.0.0
  */
 function run_glami_feed_generator_pixel_for_woocommerce() {
-	if( ! class_exists( 'WC_Integration' )) {
-		add_action( 'admin_notices', 'woocommerce_missing_noticea' );
-		return false;
-	}
 	$plugin = new Glami_Feed_Generator_Pixel_For_Woocommerce();
 	$plugin->run();
 }
