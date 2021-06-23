@@ -1,0 +1,406 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: GLAMI feed generator + PiXel for WooCommerce\n"
+"POT-Creation-Date: 2021-06-07 10:35+0300\n"
+"PO-Revision-Date: 2021-06-07 09:57+0300\n"
+"Last-Translator: Dimitrios Selimidis <ds@webexpert.gr>\n"
+"Language-Team: Dimitrios Selimidis <ds@webexpert.gr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.3\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: glami-feed-generator-pixel-for-woocommerce.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: admin/class-glami-feed-generator-pixel-for-woocommerce-admin.php:141
+msgid "GLAMI product category"
+msgstr ""
+
+#: admin/class-glami-feed-generator-pixel-for-woocommerce-admin.php:147
+msgid "GLAMI product category mapping"
+msgstr ""
+
+#: admin/class-glami-feed-generator-pixel-for-woocommerce-admin.php:172
+msgid "GLAMI categories"
+msgstr ""
+
+#: admin/class-glami-feed-generator-pixel-for-woocommerce-admin.php:179
+msgid "GLAMI category mapping"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-engine.php:181
+msgid "size"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-engine.php:198
+msgid "material"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-engine.php:209
+msgid "colour"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-engine.php:216
+msgid "gender"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-engine.php:223
+msgid "length"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-engine.php:230
+msgid "occasion"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-engine.php:237
+msgid "season"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-engine.php:244
+msgid "pattern"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-engine.php:251
+msgid "style"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-engine.php:258
+msgid "fit"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-engine.php:265
+msgid "cut"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:55
+msgid "GLAMI feed generator + PiXel"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:56
+msgid "GLAMI feed generator + PiXel."
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:88
+msgid "View GLAMI Feed Generator & Pixel Settings"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:89
+msgid "Settings"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:104
+msgid "Generate Feed"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:109
+msgid "Once the XML is generated, the XML feed URL will be displayed here."
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:112
+msgid "Pixel Key"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:114
+msgid ""
+"Paste your GLAMI pixel key. You can find it in your GLAMI dashboard under "
+"GLAMI pixel - instructions for developers."
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:118
+msgid "Engine"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:120
+msgid "Choose the GLAMI fashion search engine you want to appear in."
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:126
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:131
+msgid "Description"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:128
+msgid ""
+"Choose the attributes that will be used for description attribute in XML."
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:130
+msgid "Short description"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:137
+msgid "Cron schedule"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:139
+msgid "Choose the frequency of the feed update."
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:141
+msgid "Hourly"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:142
+msgid "Twice Daily"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:143
+msgid "Daily"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:149
+msgid "Manufacturer"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:151
+msgid ""
+"Choose the attributes that will be used for manufacturer attribute in XML."
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:158
+msgid "Size"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:160
+msgid "Choose the attributes that will be used for size attribute in XML."
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:167
+msgid "Size system"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:169
+msgid ""
+"Choose the attributes that will be used for size system attribute in XML."
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:174
+msgid "Colour"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:176
+msgid "Choose the attributes that will be used for colour attribute in XML."
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:183
+msgid "Cut"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:185
+msgid "Choose the attributes that will be used for cut attribute in XML."
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:192
+msgid "Heel Type"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:194
+msgid "Choose the attributes that will be used for heel type attribute in XML."
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:201
+msgid "Length"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:203
+msgid "Choose the attributes that will be used for length attribute in XML."
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:210
+msgid "Occasion"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:212
+msgid "Choose the attributes that will be used for occasion attribute in XML."
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:219
+msgid "Pattern"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:221
+msgid "Choose the attributes that will be used for pattern attribute in XML."
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:228
+msgid "Gender"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:230
+msgid "Choose the attributes that will be used for gender attribute in XML."
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:237
+msgid "Strap"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:239
+msgid "Choose the attributes that will be used for strap attribute in XML."
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:246
+msgid "Style"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:248
+msgid "Choose the attributes that will be used for style attribute in XML."
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:255
+msgid "Sport"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:257
+msgid "Choose the attributes that will be used for sport attribute in XML."
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:264
+msgid "Sleeve length"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:266
+msgid ""
+"Choose the attributes that will be used for sleeve length attribute in XML."
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:273
+msgid "Material"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:275
+msgid "Choose the attributes that will be used for material attribute in XML."
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:282
+msgid "Season"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:284
+msgid "Choose the attributes that will be used for season attribute in XML."
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:291
+msgid "Trend"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:293
+msgid "Choose the attributes that will be used for trend attribute in XML."
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:300
+msgid "Certification"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:302
+msgid ""
+"Choose the attributes that will be used for certification attribute in XML."
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:309
+msgid "Fit"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:311
+msgid "Choose the attributes that will be used for fit attribute in XML."
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:318
+msgid "Sustainability"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:320
+msgid ""
+"Choose the attributes that will be used for sustainability attribute in XML."
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:338
+msgid "English"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:339
+msgid "Romania"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:340
+msgid "Greece"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:341
+msgid "Croatia"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:342
+msgid "Hungary"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:343
+msgid "Czech Republic"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:344
+msgid "Slovakia"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:345
+msgid "Slovenia"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:346
+msgid "Turkey"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:347
+msgid "Estonia"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:348
+msgid "Lithuania"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:349
+msgid "Litva"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:350
+msgid "Spain"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:351
+msgid "Brazil"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:352
+msgid "Bulgaria"
+msgstr ""
+
+#: includes/class-glami-feed-generator-pixel-for-woocommerce-integration.php:384
+msgid "Feed"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "GLAMI feed generator + PiXel for WooCommerce"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "https://www.glami.eco/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"This is a short description of what the plugin does. It's displayed in the "
+"WordPress admin area."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "GLAMI"
+msgstr ""
