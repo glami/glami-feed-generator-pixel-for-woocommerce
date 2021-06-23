@@ -207,7 +207,7 @@ class Glami_Feed_Generator_Pixel_For_Woocommerce_Engine {
 			$shopitem->appendChild($param);
 		}
 
-		if (is_array($options['glami_gender']) && sizeof($options['glami_colour']) > 0 && !empty($this->glami_get_attribute($product, 'gender', $options))) {
+		if (is_array($options['glami_gender']) && sizeof($options['glami_gender']) > 0 && !empty($this->glami_get_attribute($product, 'gender', $options))) {
 			$param=$domtree->createElement('param');
 			$param->appendChild($domtree->createElement('param_name',__('gender','glami-feed-generator-pixel-for-woocommerce')));
 			$param->appendChild($domtree->createElement('val',$this->glami_get_attribute($product, 'gender', $options)));
