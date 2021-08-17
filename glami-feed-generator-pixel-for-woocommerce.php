@@ -33,7 +33,7 @@ if ( ! defined( 'WPINC' ) ) {
 
 require 'includes/update/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://github.com/glami/woocommerce-module/',
+	'https://github.com/glami/glami-feed-generator-pixel-for-woocommerce/',
 	__FILE__,
 	'glami-feed-generator-pixel-for-woocommerce'
 );
