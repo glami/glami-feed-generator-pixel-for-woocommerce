@@ -92,7 +92,7 @@ class Glami_Feed_Generator_Pixel_For_Woocommerce_Engine {
 		}
 		$description=strip_tags(html_entity_decode($description));
 		$shopitem->appendChild($domtree->createElement('description',apply_filters('glami_feed_generator_pixel_custom_description', $description,$product)));
-//		$shopitem->appendChild($domtree->createElement('url',htmlspecialchars($product->get_permalink())));
+		$shopitem->appendChild($domtree->createElement('url',htmlspecialchars($product->get_permalink())));
 		$shopitem->appendChild($domtree->createElement('imgurl',wp_get_attachment_url($product->get_image_id())));
 		$attachment_ids=apply_filters('glami_feed_generator_pixel_custom_gallery', $product->get_gallery_image_ids(),$product);
 		foreach ($attachment_ids as $attachment_id) {
