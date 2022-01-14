@@ -22,14 +22,12 @@
  */
 class Glami_Feed_Generator_Pixel_For_Woocommerce_Public {
 
-	private $plugin_name;
-    private $version;
     private $glami_settings;
 
 	public function __construct( $plugin_name, $version ) {
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
-		$this->glami_settings = get_option('woocommerce_glami-feed-generator-pixel-for-woocommerce_settings');
+		$this->glami_settings = get_option('woocommerce_glami-feed-generator-pixel-for-woocommerce_settings',[]);
 	}
 
     function glami_preload_basic_script($content=null) {
@@ -50,7 +48,7 @@ class Glami_Feed_Generator_Pixel_For_Woocommerce_Public {
 
     function glami_output_analytics_tracking_script() {
         global $post;
-        if ($this->glami_settings['glami_pixel_key']==null || empty($this->glami_settings['glami_pixel_key'])) {
+        if (empty($this->glami_settings) || $this->glami_settings['glami_pixel_key']==null || empty($this->glami_settings['glami_pixel_key'])) {
             return;
         }
 
