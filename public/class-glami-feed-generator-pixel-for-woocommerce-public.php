@@ -33,13 +33,16 @@ class Glami_Feed_Generator_Pixel_For_Woocommerce_Public {
 	}
 
     function glami_preload_basic_script($content=null) {
+	    $parse = explode('.',$this->glami_settings['glami_pixel_key']);
+	    if (is_array($parse))
+	        $parse = end($parse);
         echo "<!-- Glami piXel -->
 		<script>
             (function(f, a, s, h, i, o, n) {f['GlamiTrackerObject'] = i;
                 f[i]=f[i]||function(){(f[i].q=f[i].q||[]).push(arguments)};o=a.createElement(s),
                     n=a.getElementsByTagName(s)[0];o.async=1;o.src=h;n.parentNode.insertBefore(o,n)
             })(window, document, 'script', '//www.".$this->glami_settings['glami_engine']."/js/compiled/pt.js', 'glami');
-            glami('create', '".$this->glami_settings['glami_pixel_key']."', 'gr');
+            glami('create', '".$this->glami_settings['glami_pixel_key']."', '".$parse."');
             $content
 		</script>
 		<!-- End Glami piXel -->";

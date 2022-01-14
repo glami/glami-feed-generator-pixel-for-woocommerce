@@ -117,18 +117,23 @@ class Glami_Feed_Generator_Pixel_For_Woocommerce_Engine {
 		$categories = "";
 		$categories_list = get_the_terms(($product->is_type('variation') || $product->is_type('variable') ? $product->get_parent_id() : $product->get_id()), 'product_cat');
 		if ($categories_list) {
-			$last_category = end($categories_list);
-			if ( class_exists( 'WPSEO_Primary_Term' ) ) {
-				$primary_term_object = new WPSEO_Primary_Term('product_cat', $product->get_id());
-				$last_category_id=$primary_term_object->get_primary_term();
-				if ($last_category_id)
-					$last_category = get_term( $last_category_id, 'product_cat' );
-			}
-			if (!empty($product->get_meta('rank_math_primary_product_cat'))) {
-				$last_category_id=$product->get_meta('rank_math_primary_product_cat');
-				if ($last_category_id)
-					$last_category = get_term( $last_category_id, 'product_cat' );
-			}
+            $last_category = end($categories_list);
+            if ( class_exists( 'WPSEO_Primary_Term' ) ) {
+                if ($product->is_type('variation')) {
+                    $primary_term_object = new WPSEO_Primary_Term('product_cat', $product->get_parent_id());
+                }else {
+                    $primary_term_object = new WPSEO_Primary_Term('product_cat', $product->get_id());
+                }
+                $last_category_id=$primary_term_object->get_primary_term();
+                if ($last_category_id)
+                    $last_category = get_term( $last_category_id, 'product_cat' );
+            }
+            $rank_math_primary_product_cat=$product->is_type('variation') ? get_post_meta($product->get_parent_id(),'rank_math_primary_product_cat',true) : $product->get_meta('rank_math_primary_product_cat');
+            if (!empty($rank_math_primary_product_cat)) {
+                $last_category_id=$rank_math_primary_product_cat;
+                if ($last_category_id)
+                    $last_category = get_term( $last_category_id, 'product_cat' );
+            }
 
             $glami_category_mapping = get_term_meta($last_category->term_id, 'glami_categories_map', true);
 			if (!empty($glami_category_mapping)) {

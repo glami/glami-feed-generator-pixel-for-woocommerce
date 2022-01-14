@@ -21,10 +21,14 @@ GLAMI feed generator + PiXel is an extension built for GLAMI, an engine that foc
 
 == Changelog ==
 
+= 1.0.2 =
++ Fixed Yoast SEO compatibility
++ Fixed Rank Math compatibility
++ Fixed Glami engine main script
+
 = 1.0.1 =
 * Fixed product description and illegal characters
 * Support product link
-
 
 = 1.0.0 =
 * Initial version
