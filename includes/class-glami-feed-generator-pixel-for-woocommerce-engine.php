@@ -157,22 +157,24 @@ class Glami_Feed_Generator_Pixel_For_Woocommerce_Engine {
 		}
 		$shopitem->appendChild($domtree->createElement('categorytext',$categories));
 
-		if (get_post_meta($product->is_type('variation') ? $product->get_parent_id() : $product->get_id(), 'glami_feed_generator_pixel_cpc', true)) {
-			$shopitem->appendChild($domtree->createElement('glami_cpc',get_post_meta($product->is_type('variation') ? $product->get_parent_id() : $product->get_id(), 'glami_feed_generator_pixel_cpc', true)));
-		}
-
-		if (get_post_meta($product->is_type('variation') ? $product->get_parent_id() : $product->get_id(), 'glami_feed_generator_pixel_promotion_id', true)) {
-			$shopitem->appendChild($domtree->createElement('promotion_id',get_post_meta($product->is_type('variation') ? $product->get_parent_id() : $product->get_id(), 'glami_feed_generator_pixel_promotion_id', true)));
-		}
+        $glami_feed_generator_pixel_cpc=$p_parent ? $p_parent->get_meta('glami_feed_generator_pixel_cpc') : $product->get_meta('glami_feed_generator_pixel_cpc');
+        $glami_feed_generator_pixel_promotion_id= $p_parent ? $p_parent->get_meta('glami_feed_generator_pixel_promotion_id') : $product->get_meta('glami_feed_generator_pixel_promotion_id');
+        if (!empty($glami_feed_generator_pixel_cpc)) {
+            $shopitem->appendChild($domtree->createElement('glami_cpc',$glami_feed_generator_pixel_cpc));
+        }
+        if (!empty($glami_feed_generator_pixel_promotion_id)) {
+            $shopitem->appendChild($domtree->createElement('promotion_id',$glami_feed_generator_pixel_promotion_id));
+        }
 
 		if ($product->is_in_stock() && !$product->backorders_allowed()) {
 			$delivery_date=0;
+            $shopitem->appendChild($domtree->createElement('delivery_date',$delivery_date));
 		} else {
 			if ($product->backorders_allowed() && $product->get_stock_quantity() > 0) {
 				$delivery_date=0;
+                $shopitem->appendChild($domtree->createElement('delivery_date',$delivery_date));
 			}
 		}
-		$shopitem->appendChild($domtree->createElement('delivery_date',$delivery_date));
 
 		if (is_array($options['glami_manufacturer']) && sizeof($options['glami_manufacturer']) > 0 && !empty($this->glami_get_attribute($product, 'manufacturer', $options))) {
 			$shopitem->appendChild($domtree->createElement('manufacturer',$this->glami_get_attribute($product, 'manufacturer', $options)));

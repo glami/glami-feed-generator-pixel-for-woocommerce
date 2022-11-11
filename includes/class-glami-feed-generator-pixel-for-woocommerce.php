@@ -78,6 +78,7 @@ class Glami_Feed_Generator_Pixel_For_Woocommerce {
 		$this->set_locale();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
+        $this->define_wp_cli_commands();
 
 	}
 
@@ -194,6 +195,15 @@ class Glami_Feed_Generator_Pixel_For_Woocommerce {
         $this->loader->add_action( 'woocommerce_after_add_to_cart_button', $plugin_public, 'glami_load_add_to_cart_analytics');
         $this->loader->add_action( 'woocommerce_thankyou', $plugin_public, 'glami_load_ecommerce_analytics');
 	}
+
+    private function define_wp_cli_commands() {
+        if ( ! class_exists( 'WP_CLI' ) ) {
+            return;
+        }
+        require_once plugin_dir_path(__FILE__) . 'class-glami-feed-generator-pixel-for-woocommerce-cli.php';
+
+        WP_CLI::add_command( 'glami', 'Glami_Feed_Generator_Pixel_For_Woocommerce_CLI' );
+    }
 
 	/**
 	 * Run the loader to execute all of the hooks with WordPress.

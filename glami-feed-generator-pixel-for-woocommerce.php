@@ -15,13 +15,13 @@
  * Plugin Name:       GLAMI feed generator + PiXel for WooCommerce
  * Plugin URI:        https://www.glami.eco/
  * Description:       GLAMI feed generator + PiXel is an extension built for GLAMI, an engine that focuses on all styles of fashion, apparel and accessories.
- * Version:           1.0.3
+ * Version:           1.0.4
  * Author:            GLAMI
  * Author URI:        https://www.glami.eco/
  * Text Domain:       glami-feed-generator-pixel-for-woocommerce
  * Domain Path:       /languages
  * WC requires at least: 3.0
- * WC tested up to:   6.1.0
+ * WC tested up to:   7.1.0
  * License:           GNU General Public License v3.0
  * License URI:       http://www.gnu.org/licenses/gpl-3.0.html
  */
@@ -100,3 +100,9 @@ function woocommerce_missing_notices() {
 
 	printf( '<div class="%s"><p>%s</p></div>', $class, $message );
 }
+
+add_action( 'before_woocommerce_init', function() {
+    if ( class_exists( '\Automattic\WooCommerce\Utilities\FeaturesUtil' ) ) {
+        \Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', __FILE__, true );
+    }
+} );
