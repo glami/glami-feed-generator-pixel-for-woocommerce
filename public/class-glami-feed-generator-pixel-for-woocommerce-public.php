@@ -31,7 +31,7 @@ class Glami_Feed_Generator_Pixel_For_Woocommerce_Public {
 	}
 
     function glami_preload_basic_script($content=null) {
-	    $parse = explode('.',$this->glami_settings['glami_pixel_key']);
+	    $parse = explode('.',$this->glami_settings['glami_engine']);
 	    if (is_array($parse))
 	        $parse = end($parse);
         echo "<!-- Glami piXel -->
