@@ -59,18 +59,11 @@ class Glami_Feed_Generator_Pixel_For_Woocommerce_Public {
                 $product_title_rest="";
                 $item_ids=[];
                 if ($product->is_type('variable')) {
-                    foreach ($this->glami_settings['glami_color'] as $color) {
-                        $product_title_rest=" ".$product->get_attribute($color);
-                    }
                     $children_ids = $product->get_children();
-                    $item_ids[]= $product->get_id();
-                    foreach ($children_ids as $children_id) {
-                        $variation=wc_get_product($children_id);
-                        if ($variation)
-                            array_push($item_ids,$variation);
-                    }
+                    if (!empty($children_ids))
+                        $item_ids=array_merge([$product->get_id()],$children_ids);
                 }else {
-                    array_push($item_ids,$product->get_id());
+                    $item_ids[]=$product->get_id();
                 }
                 $pixel.="glami('track', 'ViewContent', {
                 content_type: 'product',
