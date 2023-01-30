@@ -70,6 +70,10 @@ class Glami_Feed_Generator_Pixel_For_Woocommerce_Engine {
     }
 
 	function generate_xml_part($product, $options, $shop, $domtree) {
+        if (isset($options['glami_exclude_out_of_stock']) && $options['glami_exclude_out_of_stock']=='yes' && !$product->is_in_stock()) {
+            return ;
+        }
+
 		$p_parent = null;
 		if ($product->is_type('variation')) {
 			$p_parent = wc_get_product($product->get_parent_id());

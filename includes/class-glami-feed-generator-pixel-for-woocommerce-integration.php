@@ -145,6 +145,15 @@ class Glami_Feed_Generator_Pixel_For_Woocommerce_Integration extends WC_Integrat
 				'default'     => 'hourly',
 				'desc_tip'          => true,
 			),
+            'glami_exclude_out_of_stock' => array(
+                'title'       => __( 'Out of Stock', 'glami-feed-generator-pixel-for-woocommerce' ),
+                'label'       => __( 'Exclude out of Stock from XML feed', 'glami-feed-generator-pixel-for-woocommerce' ),
+                'type'        => 'checkbox',
+                'description' => __( 'Excludes out of stock products from XML if selected.', 'glami-feed-generator-pixel-for-woocommerce' ),
+                'options'     => $this->attribute_taxonomies(),
+                'default'     => '',
+                'desc_tip'          => true,
+            ),
 			'glami_manufacturer' => array(
 				'title'       => __( 'Manufacturer', 'glami-feed-generator-pixel-for-woocommerce' ),
 				'type'        => 'multiselect',
@@ -167,7 +176,7 @@ class Glami_Feed_Generator_Pixel_For_Woocommerce_Integration extends WC_Integrat
 				'title'       => __( 'Size system', 'glami-feed-generator-pixel-for-woocommerce' ),
 				'type'        => 'text',
 				'description' => __( 'Choose the attributes that will be used for size system attribute in XML.', 'glami-feed-generator-pixel-for-woocommerce' ),
-				'default'     => '',
+				'default'     => 'EU',
 				'desc_tip'          => true,
 			),
 			'glami_color' => array(
