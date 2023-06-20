@@ -344,21 +344,22 @@ class Glami_Feed_Generator_Pixel_For_Woocommerce_Integration extends WC_Integrat
 	 */
 	private function glami_engines() {
 		return [
-			'glami.eco'=>__('English','glami-feed-generator-pixel-for-woocommerce'),
-			'glami.ro'=>__('Romania','glami-feed-generator-pixel-for-woocommerce'),
-			'glami.gr'=>__('Greece','glami-feed-generator-pixel-for-woocommerce'),
-			'glami.hr'=>__('Croatia','glami-feed-generator-pixel-for-woocommerce'),
-			'glami.hu'=>__('Hungary','glami-feed-generator-pixel-for-woocommerce'),
-			'glami.cz'=>__('Czech Republic','glami-feed-generator-pixel-for-woocommerce'),
+            'glami.com.br'=>__('Brazil','glami-feed-generator-pixel-for-woocommerce'),
+            'glami.bg'=>__('Bulgaria','glami-feed-generator-pixel-for-woocommerce'),
+            'glami.hr'=>__('Croatia','glami-feed-generator-pixel-for-woocommerce'),
+            'glami.cz'=>__('Czech Republic','glami-feed-generator-pixel-for-woocommerce'),
+            'glami.eco'=>__('English','glami-feed-generator-pixel-for-woocommerce'),
+            'glami.ee'=>__('Estonia','glami-feed-generator-pixel-for-woocommerce'),
+            'glami.gr'=>__('Greece','glami-feed-generator-pixel-for-woocommerce'),
+            'glami.hu'=>__('Hungary','glami-feed-generator-pixel-for-woocommerce'),
+            'glami.it'=>__('Italy','glami-feed-generator-pixel-for-woocommerce'),
+            'glami.lv'=>__('Lithuania','glami-feed-generator-pixel-for-woocommerce'),
+            'glami.lt'=>__('Litva','glami-feed-generator-pixel-for-woocommerce'),
+            'glami.ro'=>__('Romania','glami-feed-generator-pixel-for-woocommerce'),
 			'glami.sk'=>__('Slovakia','glami-feed-generator-pixel-for-woocommerce'),
 			'glami.si'=>__('Slovenia','glami-feed-generator-pixel-for-woocommerce'),
+            'glami.es'=>__('Spain','glami-feed-generator-pixel-for-woocommerce'),
 			'glami.com.tr'=>__('Turkey','glami-feed-generator-pixel-for-woocommerce'),
-			'glami.ee'=>__('Estonia','glami-feed-generator-pixel-for-woocommerce'),
-			'glami.lv'=>__('Lithuania','glami-feed-generator-pixel-for-woocommerce'),
-			'glami.lt'=>__('Litva','glami-feed-generator-pixel-for-woocommerce'),
-			'glami.es'=>__('Spain','glami-feed-generator-pixel-for-woocommerce'),
-			'glami.com.br'=>__('Brazil','glami-feed-generator-pixel-for-woocommerce'),
-			'glami.bg'=>__('Bulgaria','glami-feed-generator-pixel-for-woocommerce'),
 		];
 	}
 	private function attribute_taxonomies() {

@@ -212,112 +212,112 @@ class Glami_Feed_Generator_Pixel_For_Woocommerce_Engine {
 			}
 		}
 
-		if (is_array($options['glami_colour']) && sizeof($options['glami_colour']) > 0 && !empty($this->glami_get_attribute($product, 'colour', $options))) {
+		if (isset($options['glami_colour']) && is_array($options['glami_colour']) && sizeof($options['glami_colour']) > 0 && !empty($this->glami_get_attribute($product, 'colour', $options))) {
 			$param=$domtree->createElement('param');
 			$param->appendChild($domtree->createElement('param_name',__('colour','glami-feed-generator-pixel-for-woocommerce')));
 			$param->appendChild($domtree->createElement('val',$this->glami_get_attribute($product, 'colour', $options)));
 			$shopitem->appendChild($param);
 		}
 
-		if (is_array($options['glami_gender']) && sizeof($options['glami_gender']) > 0 && !empty($this->glami_get_attribute($product, 'gender', $options))) {
+		if (isset($options['glami_gender']) && is_array($options['glami_gender']) && sizeof($options['glami_gender']) > 0 && !empty($this->glami_get_attribute($product, 'gender', $options))) {
 			$param=$domtree->createElement('param');
 			$param->appendChild($domtree->createElement('param_name',__('gender','glami-feed-generator-pixel-for-woocommerce')));
 			$param->appendChild($domtree->createElement('val',$this->glami_get_attribute($product, 'gender', $options)));
 			$shopitem->appendChild($param);
 		}
 
-		if (is_array($options['glami_length']) && sizeof($options['glami_length']) > 0 && !empty($this->glami_get_attribute($product, 'length', $options))) {
+		if (isset($options['glami_length']) && is_array($options['glami_length']) && sizeof($options['glami_length']) > 0 && !empty($this->glami_get_attribute($product, 'length', $options))) {
 			$param=$domtree->createElement('param');
 			$param->appendChild($domtree->createElement('param_name',__('length','glami-feed-generator-pixel-for-woocommerce')));
 			$param->appendChild($domtree->createElement('val',$this->glami_get_attribute($product, 'length', $options)));
 			$shopitem->appendChild($param);
 		}
 
-		if (is_array($options['glami_occasion']) && sizeof($options['glami_occasion']) > 0 && !empty($this->glami_get_attribute($product, 'occasion', $options))) {
+		if (isset($options['glami_occasion']) && is_array($options['glami_occasion']) && sizeof($options['glami_occasion']) > 0 && !empty($this->glami_get_attribute($product, 'occasion', $options))) {
 			$param=$domtree->createElement('param');
 			$param->appendChild($domtree->createElement('param_name',__('occasion','glami-feed-generator-pixel-for-woocommerce')));
 			$param->appendChild($domtree->createElement('val',$this->glami_get_attribute($product, 'occasion', $options)));
 			$shopitem->appendChild($param);
 		}
 
-		if (is_array($options['glami_season']) && sizeof($options['glami_season']) > 0 && !empty($this->glami_get_attribute($product, 'season', $options))) {
+		if (isset($options['glami_season']) && is_array($options['glami_season']) && sizeof($options['glami_season']) > 0 && !empty($this->glami_get_attribute($product, 'season', $options))) {
 			$param=$domtree->createElement('param');
 			$param->appendChild($domtree->createElement('param_name',__('season','glami-feed-generator-pixel-for-woocommerce')));
 			$param->appendChild($domtree->createElement('val',$this->glami_get_attribute($product, 'occasion', $options)));
 			$shopitem->appendChild($param);
 		}
 
-		if (is_array($options['glami_pattern']) && sizeof($options['glami_pattern']) > 0 && !empty($this->glami_get_attribute($product, 'pattern', $options))) {
+		if (isset($options['glami_pattern']) && is_array($options['glami_pattern']) && sizeof($options['glami_pattern']) > 0 && !empty($this->glami_get_attribute($product, 'pattern', $options))) {
 			$param=$domtree->createElement('param');
 			$param->appendChild($domtree->createElement('param_name',__('pattern','glami-feed-generator-pixel-for-woocommerce')));
 			$param->appendChild($domtree->createElement('val',$this->glami_get_attribute($product, 'pattern', $options)));
 			$shopitem->appendChild($param);
 		}
 
-		if (is_array($options['glami_style']) && sizeof($options['glami_style']) > 0 && !empty($this->glami_get_attribute($product, 'style', $options))) {
+		if (isset($options['glami_style']) && is_array($options['glami_style']) && sizeof($options['glami_style']) > 0 && !empty($this->glami_get_attribute($product, 'style', $options))) {
 			$param=$domtree->createElement('param');
 			$param->appendChild($domtree->createElement('param_name',__('style','glami-feed-generator-pixel-for-woocommerce')));
 			$param->appendChild($domtree->createElement('val',$this->glami_get_attribute($product, 'style', $options)));
 			$shopitem->appendChild($param);
 		}
 
-		if (is_array($options['glami_fit']) && sizeof($options['glami_fit']) > 0 && !empty($this->glami_get_attribute($product, 'fit', $options))) {
+		if (isset($options['glami_fit']) && is_array($options['glami_fit']) && sizeof($options['glami_fit']) > 0 && !empty($this->glami_get_attribute($product, 'fit', $options))) {
 			$param=$domtree->createElement('param');
 			$param->appendChild($domtree->createElement('param_name',__('fit','glami-feed-generator-pixel-for-woocommerce')));
 			$param->appendChild($domtree->createElement('val',$this->glami_get_attribute($product, 'fit', $options)));
 			$shopitem->appendChild($param);
 		}
 
-		if (is_array($options['glami_heel_type']) && sizeof($options['glami_heel_type']) > 0 && !empty($this->glami_get_attribute($product, 'heel_type', $options))) {
+		if (isset($options['glami_heel_type']) && is_array($options['glami_heel_type']) && sizeof($options['glami_heel_type']) > 0 && !empty($this->glami_get_attribute($product, 'heel_type', $options))) {
 			$param=$domtree->createElement('param');
 			$param->appendChild($domtree->createElement('param_name',__('heel type','glami-feed-generator-pixel-for-woocommerce')));
 			$param->appendChild($domtree->createElement('val',$this->glami_get_attribute($product, 'heel_type', $options)));
 			$shopitem->appendChild($param);
 		}
 
-		if (is_array($options['glami_cut']) && sizeof($options['glami_cut']) > 0 && !empty($this->glami_get_attribute($product, 'cut', $options))) {
+		if (isset($options['glami_cut']) && is_array($options['glami_cut']) && sizeof($options['glami_cut']) > 0 && !empty($this->glami_get_attribute($product, 'cut', $options))) {
 			$param=$domtree->createElement('param');
 			$param->appendChild($domtree->createElement('param_name',__('cut','glami-feed-generator-pixel-for-woocommerce')));
 			$param->appendChild($domtree->createElement('val',$this->glami_get_attribute($product, 'cut', $options)));
 			$shopitem->appendChild($param);
 		}
 
-		if (is_array($options['glami_strap']) && sizeof($options['glami_strap']) > 0 && !empty($this->glami_get_attribute($product, 'strap', $options))) {
+		if (isset($options['glami_strap']) && is_array($options['glami_strap']) && sizeof($options['glami_strap']) > 0 && !empty($this->glami_get_attribute($product, 'strap', $options))) {
 			$param=$domtree->createElement('param');
 			$param->appendChild($domtree->createElement('param_name',__('strap','glami-feed-generator-pixel-for-woocommerce')));
 			$param->appendChild($domtree->createElement('val',$this->glami_get_attribute($product, 'strap', $options)));
 			$shopitem->appendChild($param);
 		}
 
-		if (is_array($options['glami_sport']) && sizeof($options['glami_sport']) > 0 && !empty($this->glami_get_attribute($product, 'sport', $options))) {
+		if (isset($options['glami_sport']) && is_array($options['glami_sport']) && sizeof($options['glami_sport']) > 0 && !empty($this->glami_get_attribute($product, 'sport', $options))) {
 			$param=$domtree->createElement('param');
 			$param->appendChild($domtree->createElement('param_name',__('sport','glami-feed-generator-pixel-for-woocommerce')));
 			$param->appendChild($domtree->createElement('val',$this->glami_get_attribute($product, 'sport', $options)));
 			$shopitem->appendChild($param);
 		}
 
-		if (is_array($options['glami_sleeve_length']) && sizeof($options['glami_sleeve_length']) > 0 && !empty($this->glami_get_attribute($product, 'sleeve_length', $options))) {
+		if (isset($options['glami_sleeve_length']) && is_array($options['glami_sleeve_length']) && sizeof($options['glami_sleeve_length']) > 0 && !empty($this->glami_get_attribute($product, 'sleeve_length', $options))) {
 			$param=$domtree->createElement('param');
 			$param->appendChild($domtree->createElement('param_name',__('sleeve length','glami-feed-generator-pixel-for-woocommerce')));
 			$param->appendChild($domtree->createElement('val',$this->glami_get_attribute($product, 'sleeve_length', $options)));
 			$shopitem->appendChild($param);
 		}
 
-		if (is_array($options['glami_trend']) && sizeof($options['glami_trend']) > 0 && !empty($this->glami_get_attribute($product, 'trend', $options))) {
+		if (isset($options['glami_trend']) && is_array($options['glami_trend']) && sizeof($options['glami_trend']) > 0 && !empty($this->glami_get_attribute($product, 'trend', $options))) {
 			$param=$domtree->createElement('param');
 			$param->appendChild($domtree->createElement('param_name',__('trend','glami-feed-generator-pixel-for-woocommerce')));
 			$param->appendChild($domtree->createElement('val',$this->glami_get_attribute($product, 'trend', $options)));
 			$shopitem->appendChild($param);
 		}
 
-		if (is_array($options['glami_certification']) && sizeof($options['glami_certification']) > 0 && !empty($this->glami_get_attribute($product, 'certification', $options))) {
+		if (isset($options['glami_certification']) && is_array($options['glami_certification']) && sizeof($options['glami_certification']) > 0 && !empty($this->glami_get_attribute($product, 'certification', $options))) {
 			$param=$domtree->createElement('param');
 			$param->appendChild($domtree->createElement('param_name',__('certification','glami-feed-generator-pixel-for-woocommerce')));
 			$param->appendChild($domtree->createElement('val',$this->glami_get_attribute($product, 'certification', $options)));
 			$shopitem->appendChild($param);
 		}
 
-		if (is_array($options['glami_sustainability']) && sizeof($options['glami_sustainability']) > 0 && !empty($this->glami_get_attribute($product, 'sustainability', $options))) {
+		if (isset($options['glami_sustainability']) && is_array($options['glami_sustainability']) && sizeof($options['glami_sustainability']) > 0 && !empty($this->glami_get_attribute($product, 'sustainability', $options))) {
 			$param=$domtree->createElement('param');
 			$param->appendChild($domtree->createElement('param_name',__('sustainability','glami-feed-generator-pixel-for-woocommerce')));
 			$param->appendChild($domtree->createElement('val',$this->glami_get_attribute($product, 'sustainability', $options)));
