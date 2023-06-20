@@ -25,7 +25,7 @@ you update your products daily on Glami, automatically creating the XML that con
 == Changelog ==
 
 = 1.0.9 =
-* Added the ability to exclude out of stock products from XML
+* Added Italy on engine listing
 
 = 1.0.8 =
 * Added the ability to exclude out of stock products from XML
