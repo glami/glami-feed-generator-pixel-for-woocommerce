@@ -2,7 +2,7 @@
 Contributors: glami
 Tags: glami, feed, fashion, pixel
 Requires at least: 4.0.1
-Tested up to: 6.2.2
+Tested up to: 6.3.1
 Requires PHP: 7.0
 Stable tag: 1.0.9
 License: GPLv3 or later License
@@ -23,6 +23,10 @@ you update your products daily on Glami, automatically creating the XML that con
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
 == Changelog ==
+
+= 1.0.10 =
+* Added The SEO framework to category listing
+* Bumped WordPress and WooCommerce versions
 
 = 1.0.9 =
 * Added Italy on engine listing
