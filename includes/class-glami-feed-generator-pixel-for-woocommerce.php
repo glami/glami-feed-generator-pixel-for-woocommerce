@@ -180,6 +180,7 @@ class Glami_Feed_Generator_Pixel_For_Woocommerce {
 		$this->loader->add_action('edited_product_cat', $plugin_admin, 'save_taxonomy_custom_meta', 10, 1);
 		$this->loader->add_action('create_product_cat', $plugin_admin, 'save_taxonomy_custom_meta', 10, 1);
 		$this->loader->add_action('wp_ajax_glami_feed_run_ajax_event', $plugin_admin, 'glami_feed_run_ajax_event', 10, 1);
+		$this->loader->add_action('plugin_action_links', $plugin_admin, 'plugin_action_links', 10, 2);
 	}
 
 	/**
@@ -193,7 +194,8 @@ class Glami_Feed_Generator_Pixel_For_Woocommerce {
 		$plugin_public = new Glami_Feed_Generator_Pixel_For_Woocommerce_Public( $this->get_plugin_name(), $this->get_version() );
         $this->loader->add_action( 'wp_print_footer_scripts', $plugin_public, 'glami_output_analytics_tracking_script');
         $this->loader->add_action( 'woocommerce_after_add_to_cart_button', $plugin_public, 'glami_load_add_to_cart_analytics');
-        $this->loader->add_action( 'woocommerce_thankyou', $plugin_public, 'glami_load_ecommerce_analytics');
+		$this->loader->add_action( 'woocommerce_thankyou', $plugin_public, 'glami_load_ecommerce_analytics');
+		$this->loader->add_action( 'woocommerce_thankyou', $plugin_public, 'glami_top_integration_guide');
 	}
 
     private function define_wp_cli_commands() {

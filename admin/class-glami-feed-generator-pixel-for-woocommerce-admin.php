@@ -186,4 +186,17 @@ class Glami_Feed_Generator_Pixel_For_Woocommerce_Admin {
 		$generator=$feed->generate();
 		wp_send_json($generator);
 	}
+
+	function plugin_action_links($links, $file)
+	{
+		static $this_plugin;
+		if (!$this_plugin) {
+			$this_plugin = ( dirname(plugin_basename(__FILE__), 2) . '/' . $this->plugin_name . '.php' );
+		}
+		if ($file == $this_plugin) {
+			$settings_link = '<a href="' . admin_url("admin.php?page=wc-settings&tab=integration&section=glami-feed-generator-pixel-for-woocommerce").'">'.__('Settings').'</a>';
+			array_unshift($links, $settings_link);
+		}
+		return $links;
+	}
 }

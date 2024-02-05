@@ -22,13 +22,63 @@
  */
 class Glami_Feed_Generator_Pixel_For_Woocommerce_Public {
 
-    private $glami_settings;
+	private $glami_settings;
+	private $plugin_name;
+	private $version;
 
 	public function __construct( $plugin_name, $version ) {
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
 		$this->glami_settings = get_option('woocommerce_glami-feed-generator-pixel-for-woocommerce_settings',[]);
 	}
+
+    function glami_top_integration_guide($order_id){
+        if ($this->glami_settings['glami_top']!="yes") {
+            return;
+        }
+
+        $parse = explode('.',$this->glami_settings['glami_engine']);
+        if (is_array($parse))
+            $parse = end($parse);
+
+	    $order = new WC_Order( $order_id );
+        ?>
+	    <!-- GLAMI Reviews -->
+        <script>
+	    (function (f, a, s, h, i, o, n) {
+        f['GlamiOrderReview'] = i;
+        f[i] = f[i] || function () {(f[i].q = f[i].q || []).push(arguments);};
+        o = a.createElement(s), n = a.getElementsByTagName(s)[0];
+        o.async = 1; o.src = h; n.parentNode.insertBefore(o, n);
+        })(window, document, 'script', '//www.<?php echo $this->glami_settings['glami_engine'];?>/js/compiled/or.js', 'glami_or');
+        glami_or('addParameter', 'merchant_id',<?php echo $this->glami_settings['glami_pixel_key'];?>, '<?php echo $parse;?>');
+        glami_or('addParameter', 'order_id', '<?php echo $order->get_id(); ?>');
+        glami_or('addParameter', 'email', '<?php echo $order->get_billing_email(); ?>');
+        glami_or('addParameter', 'language', '<?php echo get_locale();?>');
+        glami_or('addParameter', 'items', [
+	    <?php
+	    $keysX = array_keys($order->get_items());
+	    $last_key = end($keysX);
+	    foreach ( $order->get_items() as $key => $item ) :
+		    $product = wc_get_product($item->get_product_id());
+            if ($product) {
+                ?>
+                {
+                id: '<?php echo $product->get_id(); ?>',
+                name: '<?php echo $product->get_name(); ?>'
+                }
+                <?php
+                if ($key != $last_key) {
+                    echo ', ';
+                }
+	        }
+	    endforeach; ?>
+        ]);
+        glami_or('create');
+	    <?php
+	    echo "</script>
+<!-- End of GLAMI TOP Tracking -->";
+    }
 
     function glami_preload_basic_script($content=null) {
 	    $parse = explode('.',$this->glami_settings['glami_engine']);

@@ -144,13 +144,18 @@ class Glami_Feed_Generator_Pixel_For_Woocommerce_Integration extends WC_Integrat
 				],
 				'default'     => 'hourly',
 				'desc_tip'          => true,
-			),
-            'glami_exclude_out_of_stock' => array(
+			),'glami_top' => array(
+				'title'       => __( 'Glami TOP', 'glami-feed-generator-pixel-for-woocommerce' ),
+				'label'       => __( 'GLAMI TOP integration guide', 'glami-feed-generator-pixel-for-woocommerce' ),
+				'type'        => 'checkbox',
+				'description' => __( 'GLAMI TOP is a service that helps your eshop get customer feedback on your services and the quality of the products they have purchased from you.', 'glami-feed-generator-pixel-for-woocommerce' ),
+				'default'     => '',
+				'desc_tip'          => true,
+			),'glami_exclude_out_of_stock' => array(
                 'title'       => __( 'Out of Stock', 'glami-feed-generator-pixel-for-woocommerce' ),
                 'label'       => __( 'Exclude out of Stock from XML feed', 'glami-feed-generator-pixel-for-woocommerce' ),
                 'type'        => 'checkbox',
                 'description' => __( 'Excludes out of stock products from XML if selected.', 'glami-feed-generator-pixel-for-woocommerce' ),
-                'options'     => $this->attribute_taxonomies(),
                 'default'     => '',
                 'desc_tip'          => true,
             ),
