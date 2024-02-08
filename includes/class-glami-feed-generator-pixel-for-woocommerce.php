@@ -195,7 +195,7 @@ class Glami_Feed_Generator_Pixel_For_Woocommerce {
         $this->loader->add_action( 'wp_print_footer_scripts', $plugin_public, 'glami_output_analytics_tracking_script');
         $this->loader->add_action( 'woocommerce_after_add_to_cart_button', $plugin_public, 'glami_load_add_to_cart_analytics');
 		$this->loader->add_action( 'woocommerce_thankyou', $plugin_public, 'glami_load_ecommerce_analytics');
-		$this->loader->add_action( 'woocommerce_thankyou', $plugin_public, 'glami_top_integration_guide');
+//		$this->loader->add_action( 'woocommerce_thankyou', $plugin_public, 'glami_top_integration_guide');
 	}
 
     private function define_wp_cli_commands() {

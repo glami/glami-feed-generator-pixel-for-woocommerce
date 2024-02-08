@@ -4,7 +4,7 @@ Tags: glami, feed, fashion, pixel
 Requires at least: 4.0.1
 Tested up to: 6.4.3
 Requires PHP: 7.0
-Stable tag: 1.0.11
+Stable tag: 1.0.12
 License: GPLv3 or later License
 URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -23,6 +23,9 @@ you update your products daily on Glami, automatically creating the XML that con
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
 == Changelog ==
+
+= 1.0.12 =
+* Temporary removed GLAMI Top integration
 
 = 1.0.11 =
 * Fixed color issues
