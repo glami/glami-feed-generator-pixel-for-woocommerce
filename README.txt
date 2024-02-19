@@ -24,6 +24,9 @@ you update your products daily on Glami, automatically creating the XML that con
 
 == Changelog ==
 
+= 1.0.13 =
+* Added Polish version
+
 = 1.0.12 =
 * Temporary removed GLAMI Top integration
 

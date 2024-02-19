@@ -353,6 +353,7 @@ class Glami_Feed_Generator_Pixel_For_Woocommerce_Integration extends WC_Integrat
             'glami.it'=>__('Italy','glami-feed-generator-pixel-for-woocommerce'),
             'glami.lv'=>__('Lithuania','glami-feed-generator-pixel-for-woocommerce'),
             'glami.lt'=>__('Litva','glami-feed-generator-pixel-for-woocommerce'),
+            'glami.pl'=>__('Poland','glami-feed-generator-pixel-for-woocommerce'),
             'glami.ro'=>__('Romania','glami-feed-generator-pixel-for-woocommerce'),
 			'glami.sk'=>__('Slovakia','glami-feed-generator-pixel-for-woocommerce'),
 			'glami.si'=>__('Slovenia','glami-feed-generator-pixel-for-woocommerce'),
