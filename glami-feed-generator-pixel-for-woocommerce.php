@@ -15,13 +15,13 @@
  * Plugin Name:       GLAMI feed generator + PiXel for WooCommerce
  * Plugin URI:        https://www.glami.eco/
  * Description:       GLAMI feed generator + PiXel is an extension built for GLAMI, an engine that focuses on all styles of fashion, apparel and accessories.
- * Version:           1.0.13
+ * Version:           1.0.14
  * Author:            GLAMI
  * Author URI:        https://www.glami.eco/
  * Text Domain:       glami-feed-generator-pixel-for-woocommerce
  * Domain Path:       /languages
  * WC requires at least: 3.0
- * WC tested up to:   8.6.0
+ * WC tested up to:   10.5.0
  * License:           GNU General Public License v3.0
  * License URI:       http://www.gnu.org/licenses/gpl-3.0.html
  */
@@ -32,13 +32,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 require 'includes/update/plugin-update-checker.php';
-$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://github.com/glami/glami-feed-generator-pixel-for-woocommerce/',
-	__FILE__,
-	'glami-feed-generator-pixel-for-woocommerce'
-);
-
-//Set the branch that contains the stable release.
+$myUpdateChecker = \YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker( 'https://github.com/glami/glami-feed-generator-pixel-for-woocommerce/', __FILE__, 'glami-feed-generator-pixel-for-woocommerce' );
 $myUpdateChecker->setBranch('main');
 
 /**
@@ -46,7 +40,7 @@ $myUpdateChecker->setBranch('main');
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'GLAMI_FEED_GENERATOR_PIXEL_FOR_WOOCOMMERCE_VERSION', '1.0.13' );
+define( 'GLAMI_FEED_GENERATOR_PIXEL_FOR_WOOCOMMERCE_VERSION', '1.0.14' );
 
 /**
  * The code that runs during plugin activation.

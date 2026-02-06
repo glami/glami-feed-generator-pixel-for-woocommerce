@@ -21,17 +21,14 @@
  * @author     GLAMI <info@glami.cz>
  */
 class Glami_Feed_Generator_Pixel_For_Woocommerce_Public {
-
 	private $glami_settings;
 	private $plugin_name;
 	private $version;
-
 	public function __construct( $plugin_name, $version ) {
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
 		$this->glami_settings = get_option('woocommerce_glami-feed-generator-pixel-for-woocommerce_settings',[]);
 	}
-
     function glami_top_integration_guide($order_id){
         if ($this->glami_settings['glami_top']!="yes") {
             return;
@@ -81,19 +78,36 @@ class Glami_Feed_Generator_Pixel_For_Woocommerce_Public {
     }
 
     function glami_preload_basic_script($content=null) {
-	    $parse = explode('.',$this->glami_settings['glami_engine']);
-	    if (is_array($parse))
-	        $parse = end($parse);
-        echo "<!-- Glami piXel -->
-		<script>
-            (function(f, a, s, h, i, o, n) {f['GlamiTrackerObject'] = i;
-                f[i]=f[i]||function(){(f[i].q=f[i].q||[]).push(arguments)};o=a.createElement(s),
-                    n=a.getElementsByTagName(s)[0];o.async=1;o.src=h;n.parentNode.insertBefore(o,n)
-            })(window, document, 'script', '//www.".$this->glami_settings['glami_engine']."/js/compiled/pt.js', 'glami');
-            glami('create', '".$this->glami_settings['glami_pixel_key']."', '".$parse."');
-            $content
-		</script>
-		<!-- End Glami piXel -->";
+        if (empty($this->glami_settings['glami_pixel_key'])) {
+            return;
+        }
+
+        $parse = explode('.', $this->glami_settings['glami_engine']);
+        if (is_array($parse)) {
+            $parse = end($parse); // GR / CZ / SK etc
+        }
+
+        $engine     = esc_js($this->glami_settings['glami_engine']);
+        $pixel_key  = esc_js($this->glami_settings['glami_pixel_key']);
+        $country    = esc_js($parse);
+        $wc_version = esc_js(WC()->version);
+
+        echo "<!-- Glami Pixel -->
+    <script>
+        (function(f,a,s,h,i,o,n){
+            f['GlamiTrackerObject']=i;
+            f[i]=f[i]||function(){(f[i].q=f[i].q||[]).push(arguments)};
+            o=a.createElement(s),n=a.getElementsByTagName(s)[0];
+            o.async=1;o.src=h;n.parentNode.insertBefore(o,n);
+        })(window, document, 'script', '//www.{$engine}/js/compiled/pt.js', 'glami');
+
+        glami('create', '{$pixel_key}', '{$country}', {
+            source: 'WooCommerce_{$wc_version}'
+        });
+
+        ".($content ?? "")."
+    </script>
+    <!-- End Glami Pixel -->";
     }
 
     function glami_output_analytics_tracking_script() {
@@ -124,40 +138,31 @@ class Glami_Feed_Generator_Pixel_For_Woocommerce_Public {
         }
 
         if (is_product_category()) {
-            $queried=get_queried_object();
-            if( get_class( $queried ) === 'WP_Term' ) {
-                $args = array(
-                    'status' => 'publish',
-                    'category' => array( $queried->slug ),
-                );
-
+	        global $wp_query;
+	        $queried=get_queried_object();
+	        if( get_class( $queried ) === 'WP_Term' ) {
                 $categories_list = array();
                 $ancestors = get_ancestors($queried->term_id, 'product_cat', 'taxonomy');
 
                 $ancestors=array_reverse($ancestors);
                 foreach ($ancestors as $parent) {
-                    $term = get_term_by('id', $parent, 'product_cat');
-                    array_push($categories_list, $term->name);
+                    $term              = get_term_by('id', $parent, 'product_cat');
+                    $categories_list[] = $term->name;
                 }
-                array_push($categories_list, $queried->name);
-                $categories = implode('|', $categories_list);
-
-                $products = wc_get_products( $args );
+                $categories_list[] = $queried->name;
+                $categories        = implode('|', $categories_list);
 
                 $product_ids=[];
                 $product_names=[];
-                foreach ($products as $product) {
-
-                    $product_title_rest="";
-                    if ($product->is_type('variation')) {
-                        foreach ($this->glami_settings['glami_color'] as $color) {
-                            $product_title_rest=" ".$product->get_attribute($color);
-                        }
-                    }
-
-                    array_push($product_ids,$product->get_id());
-                    array_push($product_names,esc_html($product->get_name()));
-                }
+		        if (!empty($wp_query->posts)) {
+			        foreach ( $wp_query->posts as $post ) {
+				        $product = wc_get_product( $post->ID );
+				        if ($product) {
+					        $product_ids[]   = $product->get_id();
+					        $product_names[] = esc_html( $product->get_name() );
+				        }
+			        }
+		        }
 
                 $pixel.="glami('track', 'ViewContent', {
 content_type: 'category',
@@ -174,33 +179,49 @@ category_text: '".$categories."'
     }
 
     function glami_load_ecommerce_analytics($order_id) {
-        if ($this->glami_settings['glami_pixel_key']==null || empty($this->glami_settings['glami_pixel_key'])) {
+        if (empty($this->glami_settings['glami_pixel_key'])) {
             return;
         }
 
-        $order=wc_get_order($order_id);
-        if ($order && get_option('glami_feed_generator_pixel_report_purchase_'.$order_id,null)!=1) {
-            $items_ids=[];
-            $product_names=[];
-            foreach( $order->get_items() as $item_id => $item ){
-                array_push($items_ids,$item->get_variation_id() ? $item->get_variation_id() : $item->get_product_id());
-                array_push($product_names,$item->get_name());
-            }
-
-            $pixel="glami('track', 'Purchase', {
-item_ids: ['".implode(",",$items_ids)."'],
-product_names: ['".implode(",",$product_names)."'],
-value: {$order->get_total()},
-currency: '{$order->get_currency()}',
-transaction_id: '$order_id'
-});";
-            $this->glami_preload_basic_script($pixel);
-            update_option('we_glami_xml_pixel_report_purchase_'.$order_id,1);
+        $order = wc_get_order($order_id);
+        if (!$order) {
+            return;
         }
+
+        if ($order->get_meta('_glami_purchase_tracked') == 1) {
+            return;
+        }
+
+        $items_ids=[];
+        $product_names=[];
+        foreach( $order->get_items() as $item_id => $item ){
+            $items_ids[]     = $item->get_variation_id() ? $item->get_variation_id() : $item->get_product_id();
+            $product_names[] = $item->get_name();
+        }
+
+        $item_ids_js      = "'" . implode("','", array_map('esc_js', $items_ids)) . "'";
+        $product_names_js = "'" . implode("','", array_map('esc_js', $product_names)) . "'";
+
+        $total    = (float) $order->get_total();
+        $currency = esc_js($order->get_currency());
+        $order_id = esc_js($order_id);
+
+        $pixel = "
+        glami('track', 'Purchase', {
+            item_ids: [$item_ids_js],
+            product_names: [$product_names_js],
+            value: $total,
+            currency: '$currency',
+            transaction_id: '$order_id'
+        });
+    ";
+        $this->glami_preload_basic_script($pixel);
+        $order->update_meta_data('_glami_purchase_tracked', 1);
+        $order->save();
     }
 
     function glami_load_add_to_cart_analytics() {
-        if ($this->glami_settings['glami_pixel_key']==null || empty($this->glami_settings['glami_pixel_key'])) {
+        if (empty($this->glami_settings['glami_pixel_key'])) {
             return;
         }
 
