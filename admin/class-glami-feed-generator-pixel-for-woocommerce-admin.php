@@ -98,7 +98,7 @@ class Glami_Feed_Generator_Pixel_For_Woocommerce_Admin {
 
 		wp_register_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/glami-feed-generator-pixel-for-woocommerce-admin.js', array( 'jquery' ), $this->version, false );
 		wp_enqueue_script($this->plugin_name);
-		wp_localize_script($this->plugin_name, 'glami_ajax_object', array(
+		wp_localize_script($this->plugin_name, 'webexpert_glami_ajax_object', array(
 			'ajax_url' => admin_url('admin-ajax.php'),
 			'nonce' => wp_create_nonce('glami-ajax-nonce')
 		));

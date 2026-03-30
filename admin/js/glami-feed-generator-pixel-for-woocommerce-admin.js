@@ -51,10 +51,10 @@ function generateGlamiFeed() {
 	jQuery.ajax({
 		type: "post",
 		dataType: "json",
-		url: glami_ajax_object.ajax_url,
+		url: webexpert_glami_ajax_object.ajax_url,
 		data: {
 			action: 'glami_feed_run_ajax_event',
-			nonce: glami_ajax_object.nonce
+			nonce: webexpert_glami_ajax_object.nonce
 		},
 		success: function(response){
 			console.log(response);

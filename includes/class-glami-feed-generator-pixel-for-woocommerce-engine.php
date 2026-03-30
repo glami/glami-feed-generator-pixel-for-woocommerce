@@ -62,7 +62,7 @@ class Glami_Feed_Generator_Pixel_For_Woocommerce_Engine {
         if (!empty($node->CATEGORY_ID) && !array_key_exists((string)$node->CATEGORY_ID,$categories)) {
             $categories["{$node->CATEGORY_ID}"]="{$node->CATEGORY_FULLNAME}";
         }
-        if ($children->count()>0) {
+        if (!empty($children) && $children->count()>0) {
             foreach ($children as $child) {
                 $this->printChildren($child, $child->children(), $categories);
             }
